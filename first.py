@@ -7,11 +7,11 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.text, 'html.parser')
 
 # Most of the needed information is in the table towards the bottom. Find all the tds and place them in the appropriate section
-coloumns = soup.find_all('td')
-upc = coloumns[0].text.strip()
-price_including_tax = coloumns[2].text.strip()
-price_excluding_tax = coloumns[3].text.strip()
-quantity_available = coloumns[5].text.strip()
+columns = soup.find_all('td')
+upc = columns[0].text.strip()
+price_including_tax = columns[2].text.strip()
+price_excluding_tax = columns[3].text.strip()
+quantity_available = columns[5].text.strip()
 
 # Other information was around the html page
 product_page_url = URL
