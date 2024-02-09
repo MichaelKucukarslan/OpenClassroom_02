@@ -28,7 +28,7 @@ for item in big_book_list:
     print(item)
 
 print("good job")
-# Figure out Paganation
+# Figure out Pagination
 # Do milestone 3
 # TODO: turn code into functions
 # TODO: get the category saved to go into the csv file
