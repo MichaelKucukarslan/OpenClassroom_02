@@ -10,15 +10,11 @@ soup = BeautifulSoup(web_page.text, "html.parser")
 categories = soup.find(class_="side_categories").find_all('a')
 
 # get all categories from the main page
-# TODO: Remove category list if no longer needed
 book_categories_web_address = []
-book_categories_type = []
 for book in categories:
     book_categories_web_address.append(book.get("href"))
-    book_categories_type.append(book.text.strip())
 # The first one is the sample page which doesn't need to be saved so pop it
 book_categories_web_address.pop(0) 
-book_categories_type.pop(0)
 
 # This is code that will get all pages of books from one category
 big_book_list = []
