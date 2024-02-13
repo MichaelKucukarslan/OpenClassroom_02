@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 class Book_scraper:
 # Create a function that scrapes the book's info
     def web_address_to_book_info_list(self, url_address):
-        print(url_address)
+        # print(url_address)
         page = requests.get(url_address)
         soup = BeautifulSoup(page.text, 'html.parser')
         # Most of the needed information is in the table towards the bottom. Find all the tds and place them in the appropriate section
