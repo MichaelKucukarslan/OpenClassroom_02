@@ -59,6 +59,6 @@ with open('book_file.csv', mode='w') as books:
         image_url = book_info[4]
         category = book_info[1]
         book_title = book_info[2]
-        image_scraper.image_scrapper(image_url, category, book_title )
+        image_scraper.image_scraper(image_url, category, book_title )
         
 
