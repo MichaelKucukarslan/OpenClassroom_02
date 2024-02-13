@@ -1,8 +1,6 @@
 import requests, csv
 from bs4 import BeautifulSoup
 
-# URL = "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
-# page = requests.get(URL)
 class Book_scraper:
 # Create a function that scrapes the book's info
     def web_address_to_book_info_list(self, url_address):
@@ -21,7 +19,9 @@ class Book_scraper:
         category_of_book = soup.find_all('a')[3].text
         title = soup.find('h1').text 
         product_description = soup.find_all('p')[3].text 
-        image_url = soup.find('img')['src']
+        # added to get the correct image url
+        url = "http://books.toscrape.com/"
+        image_url = url + soup.find('img')['src'][6:]
         rating = soup.find('p', class_="star-rating").get("class")[1]
         return [product_page_url, category_of_book, title, rating, image_url, 
                             product_description, upc, price_including_tax, price_excluding_tax, quantity_available]    
