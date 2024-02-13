@@ -15,7 +15,3 @@ class Image_Scrapper:
                 pass
         else:
             print('Image Couldn\'t be retrieved')
-
-url = "http://books.toscrape.com/media/cache/fe/72/fe72f0532301ec28892ae79a629a293c.jpg"
-take = Image_Scrapper()
-take.image_scrapper(url, "category", "title of book")
