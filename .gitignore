@@ -1,6 +1,6 @@
 /env
 /.venv
-/Book_images
+/book_covers
 
 *.csv
 *.jpg
