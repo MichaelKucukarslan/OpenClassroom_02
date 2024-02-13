@@ -1,8 +1,8 @@
 # This main file will find all the main categories on the online bookstore
 from bs4 import BeautifulSoup
-import requests, csv, time
+import requests, csv
 from Book_scraper import Book_scraper
-from Image_scrapper import Image_Scrapper
+from Image_scraper import Image_Scraper
 from tqdm import tqdm
 
 url = "http://books.toscrape.com/"
@@ -47,7 +47,7 @@ for item in tqdm(all_categories_from_main_page):
 # Scrape the book and put them into a CSV file without loading a list into memory
 print("Getting all book's information:")
 book_scrapper = Book_scraper()
-image_scrapper = Image_Scrapper()
+image_scrapper = Image_Scraper()
 with open('book_file.csv', mode='w') as books:
     books_writer = csv.writer(books, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     books_writer.writerow(["product_page_url", "category", "book title", "review_rating", "image_url", "product_description", 
