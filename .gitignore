@@ -1,4 +1,5 @@
 /env
+/.venv
 /Book_images
 
 *.csv
