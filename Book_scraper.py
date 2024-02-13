@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 class Book_scraper:
 # Create a function that scrapes the book's info
     def web_address_to_book_info_list(self, url_address):
-        # print(url_address)
         page = requests.get(url_address)
         soup = BeautifulSoup(page.text, 'html.parser')
         # Most of the needed information is in the table towards the bottom. Find all the tds and place them in the appropriate section
@@ -25,12 +24,3 @@ class Book_scraper:
         rating = soup.find('p', class_="star-rating").get("class")[1]
         return [product_page_url, category_of_book, title, rating, image_url, 
                             product_description, upc, price_including_tax, price_excluding_tax, quantity_available]    
-
-
-
-# with open('book_file.csv', mode='w') as books:
-#     books_writer = csv.writer(books, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-#     books_writer.writerow(["product_page_url", "category", "book title", "review_rating", "image_url", "product_description", 
-#                            "upc",  "price_including_tax", "price_excluding_tax", "quantity_available"])
-#     books_writer.writerow([product_page_url, category_of_book, title, rating, image_url, 
-#                            product_description, upc, price_including_tax, price_excluding_tax, quantity_available])

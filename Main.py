@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 import requests, csv, time
 from Book_scraper import Book_scraper
+from Image_scrapper import Image_Scrapper
 from tqdm import tqdm
 
 url = "http://books.toscrape.com/"
@@ -45,10 +46,19 @@ for item in tqdm(all_categories_from_main_page):
 
 # Scrape the book and put them into a CSV file without loading a list into memory
 print("Getting all book's information:")
-bs = Book_scraper()
+book_scrapper = Book_scraper()
+image_scrapper = Image_Scrapper()
 with open('book_file.csv', mode='w') as books:
     books_writer = csv.writer(books, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     books_writer.writerow(["product_page_url", "category", "book title", "review_rating", "image_url", "product_description", 
                            "upc",  "price_including_tax", "price_excluding_tax", "quantity_available"])
+    # scrape book data AND save images
     for item in tqdm(big_book_list):
-        books_writer.writerow(bs.web_address_to_book_info_list(item))
+        book_info = book_scrapper.web_address_to_book_info_list(item)
+        books_writer.writerow(book_info)
+        image_url = book_info[4]
+        category = book_info[1]
+        book_title = book_info[2]
+        image_scrapper.image_scrapper(image_url, category, book_title )
+        
+
