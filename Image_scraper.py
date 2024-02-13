@@ -3,7 +3,7 @@ import requests # request img from web
 import shutil # save img locally
 
 file_name = "foldername/save.img"
-class Image_Scraper:
+class ImageScraper:
     def image_scraper(self, image_url, category, book_title):
         res = requests.get(image_url, stream = True)
         if res.status_code == 200:

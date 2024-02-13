@@ -1,7 +1,7 @@
 import requests, csv
 from bs4 import BeautifulSoup
 
-class Book_scraper:
+class BookScraper:
 # Create a function that scrapes the book's info
     def web_address_to_book_info_list(self, url_address):
         page = requests.get(url_address)
