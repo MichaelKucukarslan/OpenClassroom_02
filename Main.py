@@ -10,14 +10,14 @@ soup = BeautifulSoup(web_page.text, "html.parser")
 categories = soup.find(class_="side_categories").find_all('a')
 
 # get all categories from the main page
-book_categories_web_address = []
+all_categories_from_main_page = []
 for book in categories:
-    book_categories_web_address.append(book.get("href"))
+    all_categories_from_main_page.append(url + book.get("href"))
 # The first one is the sample page which doesn't need to be saved so pop it
-book_categories_web_address.pop(0) 
+all_categories_from_main_page.pop(0) 
 
-# This is code that will get all pages of books from one category
 big_book_list = []
+# This is code that will get all pages of books from one category
 def get_links_for_one_category(site_url):
     page_two = requests.get(site_url)
     soup_2 = BeautifulSoup(page_two.text, "html.parser")
@@ -36,19 +36,11 @@ def get_links_for_one_category(site_url):
 def find_all_char_pos_in_string(string, character):
     return [i for i, ltr in enumerate(string) if ltr == character]
 
-first_category = url + book_categories_web_address[0]
-for item in book_categories_web_address:
-        get_links_for_one_category(url + item)
+for item in all_categories_from_main_page:
+        get_links_for_one_category(item)
 
-# TODO: Create function that takes a url and get back a list to put into a csv file
 all_books_info = []
 bs = Book_scraper()
-# for book in big_book_list:
-#     all_books_info.append(bs.web_address_to_book_info_list(book))
-
-# for book in all_books_info:
-#     print(book)
-
 
 with open('book_file.csv', mode='w') as books:
     books_writer = csv.writer(books, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -57,10 +49,3 @@ with open('book_file.csv', mode='w') as books:
     for item in big_book_list:
         books_writer.writerow(bs.web_address_to_book_info_list(item))
 
-# Do milestone 3
-# TODO: get the category saved to go into the csv file
-# TODO: get information from those books
-# TODO: get the next page if available
-    # use a counter to count to the next page
-    # there is a pager class for categories with more than one page
-# TODO: Get images of the books
