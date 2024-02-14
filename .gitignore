@@ -1,6 +1,7 @@
 /env
 /.venv
 /book_covers
+/__pycache__
 
 *.csv
 *.jpg
