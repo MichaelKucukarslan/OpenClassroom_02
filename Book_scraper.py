@@ -1,4 +1,4 @@
-import requests, csv
+import requests
 from bs4 import BeautifulSoup
 
 class BookScraper:
@@ -17,7 +17,7 @@ class BookScraper:
         product_page_url = url_address
         category_of_book = soup.find_all('a')[3].text
         title = soup.find('h1').text 
-        product_description = soup.find_all('p')[3].text 
+        product_description = soup.find_all('p')[3].text.strip()
         # added to get the correct image url
         url = "http://books.toscrape.com/"
         image_url = url + soup.find('img')['src'][6:]

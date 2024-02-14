@@ -9,6 +9,7 @@ class ImageScraper:
         if res.status_code == 200:
             try:
                 os.makedirs('./book_covers/' + category, exist_ok=True)
+                new_book_title = book_title.replace('/', '')
                 with open('./book_covers/' + category + '/' + book_title + '.jpg','wb') as f:
                     shutil.copyfileobj(res.raw, f)
             except OSError:

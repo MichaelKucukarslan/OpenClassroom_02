@@ -48,7 +48,7 @@ for item in tqdm(all_categories_from_main_page):
 print("Getting all book's information:")
 book_scraper = BookScraper()
 image_scraper = ImageScraper()
-with open('book_file.csv', mode='w') as books:
+with open('book_file.csv', mode='w', encoding='utf-8' ) as books:
     books_writer = csv.writer(books, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     books_writer.writerow(["product_page_url", "category", "book title", "review_rating", "image_url", "product_description", 
                            "upc",  "price_including_tax", "price_excluding_tax", "quantity_available"])
@@ -60,5 +60,3 @@ with open('book_file.csv', mode='w') as books:
         category = book_info[1]
         book_title = book_info[2]
         image_scraper.image_scraper(image_url, category, book_title )
-        
-
