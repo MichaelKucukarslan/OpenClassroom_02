@@ -11,9 +11,9 @@ Doing these steps will start the program and start scraping all the details for 
 If you did everything correctly you should see this:
 
 ![Working Program](Scraper-Working.png)
-
+![Working Program]("Scraper-Working.png")
+![Working Program](/Scraper-Working.png)
+![Working Program]("/Scraper-Working.png")
 
 <img src="Scraper-Working.png" alt="Alt text" title="Optional title">
 <img src="https://cats.com/wp-content/uploads/2021/10/cat-personality-e1705355000561.jpg" alt="Alt text" title="Optional title">
-
-https://cats.com/wp-content/uploads/2021/10/cat-personality-e1705355000561.jpg
