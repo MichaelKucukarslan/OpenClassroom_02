@@ -2,8 +2,12 @@ This program will download all the book data from the site "http://books.toscrap
 
 Steps to run this application:
     Fork the repository
-    $ python3.8 -m venv env             # Setup your virtual environment
+    $ python3.8 -m venv env             # Setup your virtual environment name env
     $ pip install -r requirements.txt   # install requirements.txt 
     $ python main.py
 
 Doing these steps will start the program and start scraping all the details for all the books. 
+
+If you did everythig correctly you should see this:
+
+!(https://github.com/MichaelKucukarslan/OpenClassroom_02/blob/main/Scraper%20Working.png)
