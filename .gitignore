@@ -2,9 +2,11 @@
 /.venv
 /book_covers
 /__pycache__
+/Deliverables
 
 *.csv
 *.jpg
 *.img
+*.zip
 
 .DS_Store
