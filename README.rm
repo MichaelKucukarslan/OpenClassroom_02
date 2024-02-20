@@ -1,2 +1,9 @@
-[ ] Open a site
-[ ] Extract data
+This program will download all the book data from the site "http://books.toscrape.com/"
+
+Steps to run this application:
+    Fork the repository
+    $ python3.8 -m venv env             # Setup your virtual environment
+    $ pip install -r requirements.txt   # install requirements.txt 
+    $ python main.py
+
+Doing these steps will start the program and start scraping all the details for all the books. 
