@@ -8,9 +8,9 @@ Steps to run this application:
 
 Doing these steps will start the program and start scraping all the details for all the books. 
 
-If you did everythig correctly you should see this:
+If you did everything correctly you should see this:
 
-![Working Program](https://raw.githubusercontent.com/MichaelKucukarslan/OpenClassroom_02/main/Scraper%20Working.png)
+![Working Program](https://raw.githubusercontent.com/MichaelKucukarslan/OpenClassroom_02/main/Scraper%20Working.png?raw=true)
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/MichaelKucukarslan/OpenClassroom_02/main/Scraper%20Working.png" </img> 
